@@ -66,16 +66,6 @@ public class SymbolTable {
         return name.matches("[a-z][a-z0-9_]*");
     }
     
-    /**
-     * Adds a symbol to the current scope.
-     * For identifiers (or variables), the name must be all lowercase.
-     * For tokens such as comments, string constants, operators, or I/O keywords,
-     * the caller should supply the appropriate type.
-     * @param name The token or identifier name.
-     * @param type The token type (e.g. "int", "decimal", "io", "string constant", "comment", "arithmetic operator").
-     * @param scopeName Should be "global" if current scope level is 1, otherwise "local".
-     * @return false if a symbol with the same name already exists in the current scope or if the name is invalid.
-     */
     public boolean addSymbol(String name, String type, String scopeName) {
         Map<String, Symbol> currentScope = scopes.peek();
         if (currentScope.containsKey(name)) {
