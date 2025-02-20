@@ -59,9 +59,8 @@ public class SymbolTable {
     public int getCurrentScopeLevel() {
         return scopes.size();
     }
+
     
-    // Helper: Check if an identifier is valid (only lowercase letters, digits, and underscores,
-    // starting with a letter).
     private boolean isValidIdentifier(String name) {
         return name.matches("[a-z][a-z0-9_]*");
     }
